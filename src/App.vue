@@ -1,30 +1,67 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <header>
+      <nav>
+        <ul>
+          <li><router-link to="/"><i class="fas fa-cloud"></i> Weather</router-link></li>
+          <li><router-link to="/location"><i class="fas fa-map-marker-alt"></i> Location</router-link></li>
+          <li><router-link to="/stopwatch"><i class="fas fa-stopwatch"></i> Stopwatch</router-link></li>
+          <li><router-link to="/tictactoe"><i class="fas fa-times-circle"></i> Tic Tac Toe</router-link></li>
+          <li><router-link to="/photo"><i class="fas fa-camera"></i> Photo</router-link></li>
+        </ul>
+      </nav>
+    </header>
+    <router-view></router-view>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+};
+</script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+header {
+  background: linear-gradient(45deg, #2ecc71, #3498db);
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
   font-weight: bold;
-  color: #2c3e50;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+nav i {
+  margin-right: 5px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  background: #fff;
+  color: #2ecc71;
+  border-radius: 5px;
 }
 </style>
